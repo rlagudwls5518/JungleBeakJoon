@@ -1,6 +1,3 @@
-
-
-
 A = []
 for i in range(9):
     num = int(input())
