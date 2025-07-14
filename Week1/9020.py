@@ -27,5 +27,8 @@ for _ in range(N):
             B += 1
 
 
+            
+
+
 
 

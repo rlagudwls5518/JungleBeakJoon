@@ -1,33 +1,26 @@
-row = int(input())
-cal = int(input())
+w, h = map(int,input().split())
 
-count= int(input())
-
-square=[]
-garo=0
-sero=0
-
-mola, size = map(int, input().split())
-
-if mola == 0:
-    garo=+1
-else:
-    sero=+1
+width=[0,w]#가로
+height=[0,h]#세로
 
 
+count=int(input())
+for i in range(count):
 
-# 가로 길이랑 세로길이를 특정해야하는데 
-# 특정해서 크기구하고 크기를 square에 넣으면 끝나는디
-#일단 보류
-garo_size=[]
+    num,cut = map(int,input().split())
 
-sero_siae=[]
-
-
-
-
+    if num==0:# 가로면 0
+        height.append(cut)
+    else:# 세로면 1
+        width.append(cut)
 
 
-for i in range((garo+1)*(sero+1)):
-    square.append()
-square.sort()
+width.sort()
+height.sort()
+
+max_width = max(width[i+1] - width[i] for i in range(len(width)-1))
+max_height = max(height[i+1] - height[i] for i in range(len(height)-1))
+
+print(max_height* max_width)
+
+
