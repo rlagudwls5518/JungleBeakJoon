@@ -64,31 +64,35 @@ class stack:
 T = int(sys.stdin.readline())
 result_list=[]
 
-
 for j in range(T):
-    is_true=True
+        
     input_data = sys.stdin.readline().strip()
     s = stack(len(input_data))
+    for i in input_data:
+        if i == '(':
+            s.push(i)
 
-    
-    for ch in input_data:
-
-        if ch == ")":
-            if s.is_empty():
-                is_true=False
+        elif i == ')':
+            if s.is_empty() or s.top() == ')':
+                result_list.append("No")  # 닫을 게 없으면 NO
                 break
             else:
                 s.pop()
-        else:
-            s.push(ch)
+            
+                
+    if s.is_empty():
+        result_list.append("Yes")
 
-    if is_true and s.is_empty():
-        result_list.append("YES")
-    else:
-        result_list.append("NO")
-     
+
 for i in range(len(result_list)):
+
     print(result_list[i])
+
+
+    
+    
+     
+
 
 
 
