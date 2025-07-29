@@ -16,7 +16,7 @@ def topology_sort():
     result =[]
     q=deque()
 
-    for i in range(1,v+1):
+    for i in range(1,v+1): # 시작점 찾기
         if indegree[i] == 0:
             q.append(i)
 
