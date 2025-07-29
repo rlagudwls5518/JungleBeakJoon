@@ -1,6 +1,6 @@
 from collections import deque
 import sys
-# 노드 개수(n)와 간선 개수(m) 입력
+# 노드 개수(n)와 간선 개수(m), 거리정보k, 출발도시정보x 입력
 n, m, k, x= map(int, sys.stdin.readline().split())
 
 # 인접 리스트 생성 (1번 노드부터 사용)
@@ -29,17 +29,19 @@ def bfs(start):
             if not visited[neighbor]:
                 visited[neighbor] = True
                 queue.append(neighbor)
-                distance[start]=distance[node]+1
+                distance[neighbor] = distance[node]+1 # 살짝 이해안됨
+                # 노드를 계속 이웃노드로가면서 거리에 +1씩 추가하는?
 
-            if distance[neighbor] == k:
-                result.append(neighbor)
+                if distance[neighbor] == k:
+                    result.append(neighbor)    
 
-    if  len(result) == 0:
-        print("-1")
-    else:
+    if  result:
         result.sort()
+        # print(result)
         for i in result:
             print(i,end="\n")
+    else:
+        print('-1')
 
 
 bfs(x)
