@@ -1,5 +1,3 @@
-from collections import deque
-
 # 노드 개수(n)와 간선 개수(m) 입력
 n, m = map(int, input().split())
 
