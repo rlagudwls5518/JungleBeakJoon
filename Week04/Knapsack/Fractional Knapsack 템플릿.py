@@ -6,7 +6,7 @@ for _ in range(n):
     items.append((value, weight, value / weight))  # (가치, 무게, 비율)
 
 # 비율 기준으로 정렬
-items.sort(key=lambda x: x[2], reverse=True)
+items.sort(key = lambda x: x[2], reverse=True)
 
 total_value = 0.0
 for value, weight, ratio in items:
